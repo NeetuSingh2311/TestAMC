@@ -12,15 +12,9 @@ public class Holding {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long holdingId;
-
-    @ManyToOne
-    @JoinColumn(name = "portfolio_id")
-    private Portfolio portfolio;
-
-    @ManyToOne
-    @JoinColumn(name = "instrument_id")
-    private Instrument instrument;
-
+    private Long portfolioId;
+    private Long instrumentId;
     private Integer quantity;
     private Double marketValue;
+    private String categoryName;
 }

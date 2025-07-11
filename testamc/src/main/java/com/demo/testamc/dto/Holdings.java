@@ -1,4 +1,5 @@
 package com.demo.testamc.dto;
 
-public class SignupResponse {
+public class Holdings {
+
 }

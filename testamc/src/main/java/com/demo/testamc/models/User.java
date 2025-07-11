@@ -1,35 +1,24 @@
 package com.demo.testamc.models;
 import jakarta.persistence.*;
 import lombok.*;
+import com.demo.testamc.enums.UserType;
+
 
 @Entity
 @Data
-@NoArgsConstructor
+@Table(schema = "users")
+@Builder
 @AllArgsConstructor
-@Table(name = "users")
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
-
     private String fullName;
-    private String address;
     private String email;
+    private String address;
     private String contactNumber;
     private String pan;
-    private String passwordHash;
-    private String role; // e.g., "USER" or "ADMIN"
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", fullName='" + fullName + '\'' +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                ", pan='" + pan + '\'' +
-                ", passwordHash='" + passwordHash + '\'' +
-                ", role='" + role + '\'' +
-                '}';
-    }
+    private String password;
+    private String role;
 }

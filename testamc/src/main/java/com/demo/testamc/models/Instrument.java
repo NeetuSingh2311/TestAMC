@@ -12,11 +12,8 @@ public class Instrument {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long instrumentId;
-
     private String name;
     private String tickerSymbol;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    private String categoryName;
+    private String description;
 }
