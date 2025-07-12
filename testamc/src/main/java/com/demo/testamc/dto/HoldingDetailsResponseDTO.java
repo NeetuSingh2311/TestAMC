@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class HoldingDetailsResponseDTO {
     private String marketValue;
     private String quantity;
-    private String stockName;
+    private String instrumentName;
     private String description;
     private String ticker;
 

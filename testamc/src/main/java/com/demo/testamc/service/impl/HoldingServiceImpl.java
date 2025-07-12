@@ -17,10 +17,7 @@ import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class HoldingServiceImpl  implements HoldingService {
@@ -28,7 +25,7 @@ public class HoldingServiceImpl  implements HoldingService {
     private final UserRepository userRepository;
     private final PortfolioRepository portfolioRepository;
     private final HoldingRepository holdingRepository;
-    InstrumentRepository instrumentRepository;
+    private final InstrumentRepository instrumentRepository;
 
 
     @Autowired
@@ -41,7 +38,7 @@ public class HoldingServiceImpl  implements HoldingService {
 
 
     @Override
-    public List<HoldingDetailsResponseDTO> getEquity(String email, String category) {
+    public List<HoldingDetailsResponseDTO> getHoldingDetails(String email, String category) {
         Optional<User> user = userRepository.findByEmail(email);
         List<HoldingDetailsResponseDTO> holdingsResp = new ArrayList<>();
         if(user.isPresent()) {
@@ -52,9 +49,7 @@ public class HoldingServiceImpl  implements HoldingService {
                 holdings.stream().filter((holding -> Objects.equals(holding.getCategoryName(), category)))
                         .forEach(holding -> { instrumentRepository.findByInstrumentId(holding.getInstrumentId())
                             .ifPresent(instrument -> holdingsResp.add(createHoldingsResp(instrument, holding)));
-                });;
-
-
+                });
             }
         }
         return holdingsResp;
@@ -63,7 +58,7 @@ public class HoldingServiceImpl  implements HoldingService {
 
     private HoldingDetailsResponseDTO createHoldingsResp(Instrument instrument, Holding holding){
         return HoldingDetailsResponseDTO.builder()
-                .stockName(instrument.getName()).marketValue(holding.getMarketValue().toString()).quantity(holding.getQuantity().toString())
+                .instrumentName(instrument.getName()).marketValue(holding.getMarketValue().toString()).quantity(holding.getQuantity().toString())
                 .description(instrument.getDescription()).ticker(instrument.getTickerSymbol()).build();
     }
 }

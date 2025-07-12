@@ -5,5 +5,5 @@ import com.demo.testamc.dto.HoldingDetailsResponseDTO;
 import java.util.List;
 
 public interface HoldingService {
-    List<HoldingDetailsResponseDTO> getEquity(String email, String category);
+    List<HoldingDetailsResponseDTO> getHoldingDetails(String email, String category);
 }
