@@ -14,12 +14,14 @@ import com.demo.testamc.service.HoldingService;
 import com.demo.testamc.service.PortfolioService;
 import com.demo.testamc.service.UserService;
 import io.micrometer.common.util.StringUtils;
+import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
+@Builder
 public class HoldingServiceImpl  implements HoldingService {
 
     private final UserRepository userRepository;

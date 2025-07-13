@@ -5,6 +5,9 @@ import lombok.*;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "portfolios")
 public class Portfolio {
     @Id

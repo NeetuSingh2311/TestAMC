@@ -1,7 +1,6 @@
 package com.demo.testamc.service.impl;
 
 import com.demo.testamc.dto.CategorySummaryResponseDTO;
-import com.demo.testamc.dto.HoldingDetailsResponseDTO;
 import com.demo.testamc.dto.PortfolioSummary;
 import com.demo.testamc.models.Holding;
 import com.demo.testamc.models.Portfolio;
@@ -13,8 +12,6 @@ import com.demo.testamc.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.sound.sampled.Port;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
