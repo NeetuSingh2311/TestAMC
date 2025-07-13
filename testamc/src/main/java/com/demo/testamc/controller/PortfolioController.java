@@ -6,7 +6,6 @@ import com.demo.testamc.service.impl.CustomUserDetails;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +24,7 @@ public class PortfolioController {
     @GetMapping("/summary")
     public ResponseEntity<PortfolioSummary> getPortfolioSummary(@AuthenticationPrincipal CustomUserDetails userDetails,
                                                                 @RequestParam(required = false) String email) {
-        String userEmail = (email==null || email.isEmpty()) ? userDetails.getUsername():email;
+        String userEmail = (email == null || email.isEmpty()) ? userDetails.getUsername():email;
         return ResponseEntity.ok(portfolioService.getPortfolioSummary(userEmail));
     }
 }

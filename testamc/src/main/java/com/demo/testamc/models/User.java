@@ -1,8 +1,6 @@
 package com.demo.testamc.models;
 import jakarta.persistence.*;
 import lombok.*;
-import com.demo.testamc.enums.UserType;
-
 
 @Entity
 @Data

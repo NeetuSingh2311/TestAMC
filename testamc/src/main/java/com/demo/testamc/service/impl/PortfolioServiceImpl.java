@@ -47,10 +47,13 @@ public class PortfolioServiceImpl implements PortfolioService {
                              Holding::getCategoryName,
                              Collectors.summingDouble(Holding::getMarketValue)
                      ));
+
              equityHoldings.setCategoryName("Equity");
-             equityHoldings.setMarketValue(map.get("Equity"));
+             equityHoldings.setMarketValue(map.getOrDefault("Equity",0.0));
              fixedIncome.setCategoryName("Fixed Income");
-             fixedIncome.setMarketValue(map.get("Fixed Income"));
+             fixedIncome.setMarketValue(map.getOrDefault("Fixed Income",0.0));
+
+
           }
 
         }

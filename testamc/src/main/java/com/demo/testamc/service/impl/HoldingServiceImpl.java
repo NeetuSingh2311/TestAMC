@@ -1,7 +1,6 @@
 package com.demo.testamc.service.impl;
 
 import com.demo.testamc.dto.HoldingDetailsResponseDTO;
-import com.demo.testamc.dto.Holdings;
 import com.demo.testamc.models.Holding;
 import com.demo.testamc.models.Instrument;
 import com.demo.testamc.models.Portfolio;
@@ -11,9 +10,6 @@ import com.demo.testamc.repository.InstrumentRepository;
 import com.demo.testamc.repository.PortfolioRepository;
 import com.demo.testamc.repository.UserRepository;
 import com.demo.testamc.service.HoldingService;
-import com.demo.testamc.service.PortfolioService;
-import com.demo.testamc.service.UserService;
-import io.micrometer.common.util.StringUtils;
 import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

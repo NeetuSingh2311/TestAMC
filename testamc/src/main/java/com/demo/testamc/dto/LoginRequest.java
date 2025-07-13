@@ -1,5 +1,4 @@
 package com.demo.testamc.dto;
-
 import lombok.Data;
 
 @Data

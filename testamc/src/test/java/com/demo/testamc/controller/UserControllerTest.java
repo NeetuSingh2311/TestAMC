@@ -30,7 +30,6 @@ class UserControllerTest {
     void testGetAllUsers_ReturnsUserList() {
         User user1 = new User();
         User user2 = new User();
-        // Optionally set fields on user1 and user2
 
         List<User> mockUsers = Arrays.asList(user1, user2);
 
@@ -38,7 +37,7 @@ class UserControllerTest {
 
         ResponseEntity<List<User>> response = userController.getAllUsers();
 
-        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(200, response.getStatusCode().value());
         assertNotNull(response.getBody());
         assertEquals(2, response.getBody().size());
         verify(userService, times(1)).getUsers();

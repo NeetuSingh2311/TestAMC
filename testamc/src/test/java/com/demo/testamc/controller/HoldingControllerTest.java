@@ -33,7 +33,6 @@ class HoldingControllerTest {
 
         HoldingDetailsResponseDTO holding1 = new HoldingDetailsResponseDTO();
         HoldingDetailsResponseDTO holding2 = new HoldingDetailsResponseDTO();
-        // Optionally set fields on holding1/holding2 here
 
         List<HoldingDetailsResponseDTO> mockHoldings = Arrays.asList(holding1, holding2);
 

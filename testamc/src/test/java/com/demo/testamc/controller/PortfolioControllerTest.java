@@ -31,7 +31,6 @@ class PortfolioControllerTest {
     void testGetPortfolioSummary_WithEmailParam() {
         String email = "user@example.com";
         PortfolioSummary summary = new PortfolioSummary();
-        // Optionally set fields on summary
 
         when(portfolioService.getPortfolioSummary(email)).thenReturn(summary);
 

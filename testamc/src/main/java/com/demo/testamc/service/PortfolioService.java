@@ -1,6 +1,5 @@
 package com.demo.testamc.service;
 
-import com.demo.testamc.dto.HoldingDetailsResponseDTO;
 import com.demo.testamc.dto.PortfolioSummary;
 import com.demo.testamc.models.Portfolio;
 
